@@ -1,17 +1,16 @@
 FROM nodered/node-red:latest
 
+# Копируем всё в /usr/src/node-red
+COPY . /usr/src/node-red/
+
 # Устанавливаем node-red-contrib-alice
 RUN npm install node-red-contrib-alice
 
-# Настройка порта для Render
+# Устанавливаем переменные среды
 ENV PORT=10000
 ENV NODE_RED_PORT=10000
 
-# Настройка для запуска на 0.0.0.0
-ENV NODE_RED_ENABLE_PROJECTS=false
-ENV FLOWS=flows.json
-
 EXPOSE 10000
 
-# Запуск Node-RED на 0.0.0.0
-CMD ["node-red", "-p", "10000", "--settings", "/data/settings.js", "--userDir", "/data", "--ip", "0.0.0.0"]
+# Запускаем Node-RED и указываем путь к settings.js
+CMD ["node-red", "-p", "10000", "--settings", "./settings.js", "--userDir", "." , "--ip", "0.0.0.0"]
