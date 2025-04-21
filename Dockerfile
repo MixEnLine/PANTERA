@@ -1,14 +1,18 @@
-# Используем официальное изображение Node-RED
 FROM nodered/node-red:latest
 
-# Копируем все файлы в контейнер
-COPY . /usr/src/node-red/
+# Копируем файлы настройки и flows в рабочую директорию Node-RED
+COPY settings.js /usr/src/node-red/
+COPY flows.json /usr/src/node-red/
+COPY flows_cred.json /usr/src/node-red/
 
-# Устанавливаем зависимости, включая node-red-contrib-alice
-RUN npm install node-red-contrib-alice
+# Установка дополнительных Node-RED нодов, если нужно
+# RUN npm install node-red-contrib-mqtt node-red-dashboard node-red-contrib-alice
 
-# Открываем порт 10000
-EXPOSE 10000
+# Устанавливаем рабочую директорию
+WORKDIR /usr/src/node-red
 
-# Указываем настройки для запуска Node-RED с определёнными файлами конфигурации
-CMD ["node-red", "-p", "10000", "--settings", "/usr/src/node-red/settings.js"]
+# Порт должен совпадать с тем, что Render ожидает (укажи 10000 в настройках Render)
+ENV PORT=10000
+
+# Запуск Node-RED
+CMD ["npm", "start", "--", "--userDir", "/usr/src/node-red"]
