@@ -1,16 +1,14 @@
+# Используем официальное изображение Node-RED
 FROM nodered/node-red:latest
 
-# Копируем всё в /usr/src/node-red
+# Копируем все файлы в контейнер
 COPY . /usr/src/node-red/
 
-# Устанавливаем node-red-contrib-alice
+# Устанавливаем зависимости, включая node-red-contrib-alice
 RUN npm install node-red-contrib-alice
 
-# Устанавливаем переменные среды
-ENV PORT=10000
-ENV NODE_RED_PORT=10000
-
+# Открываем порт 10000
 EXPOSE 10000
 
-# Запускаем Node-RED и указываем путь к settings.js
-CMD ["node-red", "-p", "10000", "--settings", "./settings.js", "--userDir", "." , "--ip", "0.0.0.0"]
+# Указываем настройки для запуска Node-RED с определёнными файлами конфигурации
+CMD ["node-red", "-p", "10000", "--settings", "/usr/src/node-red/settings.js"]
