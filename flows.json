@@ -61,8 +61,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f2704805b330dec3",
-        "x": 1420,
-        "y": 300,
+        "x": 660,
+        "y": 60,
         "wires": []
     },
     {
@@ -74,14 +74,15 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 900,
-        "y": 240,
+        "x": 100,
+        "y": 780,
         "wires": [
             [
                 "d8d87368f09f7f6d",
                 "c1fa46307d0e8e04",
                 "2e2058c4dd8b2ce7",
-                "8b573c09b1cf59df"
+                "8b573c09b1cf59df",
+                "json_node"
             ]
         ]
     },
@@ -92,8 +93,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 360,
+        "x": 610,
+        "y": 120,
         "wires": []
     },
     {
@@ -103,8 +104,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 400,
+        "x": 610,
+        "y": 160,
         "wires": []
     },
     {
@@ -119,8 +120,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 360,
+        "x": 480,
+        "y": 120,
         "wires": [
             [
                 "115131ad216644d0"
@@ -139,8 +140,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 400,
+        "x": 480,
+        "y": 160,
         "wires": [
             [
                 "7d1960a88a574bac"
@@ -169,8 +170,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1110,
-        "y": 300,
+        "x": 310,
+        "y": 60,
         "wires": [
             [
                 "26fbecf8b97db2d3",
@@ -201,8 +202,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 280,
+        "x": 500,
+        "y": 40,
         "wires": [
             [
                 "d1334af4b7ba1deb"
@@ -228,8 +229,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 320,
+        "x": 500,
+        "y": 80,
         "wires": [
             [
                 "d1334af4b7ba1deb"
@@ -250,8 +251,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f2704805b330dec3",
-        "x": 1420,
-        "y": 460,
+        "x": 660,
+        "y": 240,
         "wires": []
     },
     {
@@ -276,8 +277,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1110,
-        "y": 460,
+        "x": 310,
+        "y": 240,
         "wires": [
             [
                 "7bfdf0599b804bda",
@@ -308,8 +309,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 440,
+        "x": 500,
+        "y": 220,
         "wires": [
             [
                 "7fd3737399f03a56"
@@ -335,8 +336,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 480,
+        "x": 500,
+        "y": 260,
         "wires": [
             [
                 "7fd3737399f03a56"
@@ -350,8 +351,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 520,
+        "x": 610,
+        "y": 300,
         "wires": []
     },
     {
@@ -361,8 +362,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 560,
+        "x": 610,
+        "y": 340,
         "wires": []
     },
     {
@@ -377,8 +378,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 520,
+        "x": 480,
+        "y": 300,
         "wires": [
             [
                 "68fee4ac7257c660"
@@ -397,8 +398,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 560,
+        "x": 480,
+        "y": 340,
         "wires": [
             [
                 "e6b041b0ff54350d"
@@ -419,8 +420,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f2704805b330dec3",
-        "x": 1410,
-        "y": 620,
+        "x": 650,
+        "y": 420,
         "wires": []
     },
     {
@@ -430,8 +431,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 680,
+        "x": 610,
+        "y": 480,
         "wires": []
     },
     {
@@ -441,8 +442,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 720,
+        "x": 610,
+        "y": 520,
         "wires": []
     },
     {
@@ -457,8 +458,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 680,
+        "x": 480,
+        "y": 480,
         "wires": [
             [
                 "ccbfbe0451eeb79e"
@@ -477,8 +478,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 720,
+        "x": 480,
+        "y": 520,
         "wires": [
             [
                 "315bb2e6717f9320"
@@ -507,8 +508,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1110,
-        "y": 620,
+        "x": 310,
+        "y": 420,
         "wires": [
             [
                 "e282eed84559a9f7",
@@ -539,8 +540,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 600,
+        "x": 500,
+        "y": 400,
         "wires": [
             [
                 "2c9402e473175e3e"
@@ -566,8 +567,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 640,
+        "x": 500,
+        "y": 440,
         "wires": [
             [
                 "2c9402e473175e3e"
@@ -588,8 +589,8 @@
         "correl": "",
         "expiry": "",
         "broker": "f2704805b330dec3",
-        "x": 1420,
-        "y": 780,
+        "x": 660,
+        "y": 600,
         "wires": []
     },
     {
@@ -614,8 +615,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1110,
-        "y": 780,
+        "x": 310,
+        "y": 600,
         "wires": [
             [
                 "1a45689e1c3d2951",
@@ -646,8 +647,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 760,
+        "x": 500,
+        "y": 580,
         "wires": [
             [
                 "cafdac3529c13ce8"
@@ -673,8 +674,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 800,
+        "x": 500,
+        "y": 620,
         "wires": [
             [
                 "cafdac3529c13ce8"
@@ -688,8 +689,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 840,
+        "x": 610,
+        "y": 660,
         "wires": []
     },
     {
@@ -699,8 +700,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1370,
-        "y": 880,
+        "x": 610,
+        "y": 700,
         "wires": []
     },
     {
@@ -715,8 +716,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 840,
+        "x": 480,
+        "y": 660,
         "wires": [
             [
                 "05dbc70baae8f7b1"
@@ -735,12 +736,77 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 880,
+        "x": 480,
+        "y": 700,
         "wires": [
             [
                 "b8f451fcf249f2b8"
             ]
         ]
+    },
+    {
+        "id": "json_node",
+        "type": "json",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 780,
+        "wires": [
+            [
+                "function_node",
+                "debug_node"
+            ]
+        ]
+    },
+    {
+        "id": "function_node",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "Ответ Алисе",
+        "func": "msg.payload = {\n    response: {\n        text: \"Январь 1\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 760,
+        "wires": [
+            [
+                "http_response"
+            ]
+        ]
+    },
+    {
+        "id": "http_response",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "debug_node",
+        "type": "debug",
+        "z": "e9bc6a70c1d42687",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 800,
+        "wires": []
     }
 ]
