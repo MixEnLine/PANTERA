@@ -1,0 +1,746 @@
+[
+    {
+        "id": "e9bc6a70c1d42687",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f2704805b330dec3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.66",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f12005457b668675",
+        "type": "alice-device",
+        "service": "",
+        "name": "",
+        "description": "",
+        "room": "Комната",
+        "dtype": "devices.types.light"
+    },
+    {
+        "id": "d1334af4b7ba1deb",
+        "type": "mqtt out",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "topic": "Январь",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2704805b330dec3",
+        "x": 1420,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "946e7508e5404555",
+        "type": "http in",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "url": "/webhook",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 900,
+        "y": 240,
+        "wires": [
+            [
+                "d8d87368f09f7f6d",
+                "c1fa46307d0e8e04",
+                "2e2058c4dd8b2ce7",
+                "8b573c09b1cf59df"
+            ]
+        ]
+    },
+    {
+        "id": "115131ad216644d0",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "7d1960a88a574bac",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e093a59f1f8608b8",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 1",
+        "func": "msg.payload = {\n    response: {\n        text: \"Январь 1\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 360,
+        "wires": [
+            [
+                "115131ad216644d0"
+            ]
+        ]
+    },
+    {
+        "id": "71cbec3d834ae238",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 2",
+        "func": "msg.payload = {\n    response: {\n        text: \"Январь 0\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 400,
+        "wires": [
+            [
+                "7d1960a88a574bac"
+            ]
+        ]
+    },
+    {
+        "id": "d8d87368f09f7f6d",
+        "type": "switch",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "property": "payload.request.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Январь 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Январь 0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1110,
+        "y": 300,
+        "wires": [
+            [
+                "26fbecf8b97db2d3",
+                "e093a59f1f8608b8"
+            ],
+            [
+                "71cbec3d834ae238",
+                "4a61b0802706347d"
+            ]
+        ]
+    },
+    {
+        "id": "26fbecf8b97db2d3",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 280,
+        "wires": [
+            [
+                "d1334af4b7ba1deb"
+            ]
+        ]
+    },
+    {
+        "id": "4a61b0802706347d",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 320,
+        "wires": [
+            [
+                "d1334af4b7ba1deb"
+            ]
+        ]
+    },
+    {
+        "id": "7fd3737399f03a56",
+        "type": "mqtt out",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "topic": "Февраль",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2704805b330dec3",
+        "x": 1420,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c1fa46307d0e8e04",
+        "type": "switch",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "property": "payload.request.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Февраль 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Февраль 0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1110,
+        "y": 460,
+        "wires": [
+            [
+                "7bfdf0599b804bda",
+                "d1ae811d912b7270"
+            ],
+            [
+                "73b914ef0e2f4e6a",
+                "52472654c31442be"
+            ]
+        ]
+    },
+    {
+        "id": "7bfdf0599b804bda",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 440,
+        "wires": [
+            [
+                "7fd3737399f03a56"
+            ]
+        ]
+    },
+    {
+        "id": "73b914ef0e2f4e6a",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 480,
+        "wires": [
+            [
+                "7fd3737399f03a56"
+            ]
+        ]
+    },
+    {
+        "id": "68fee4ac7257c660",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e6b041b0ff54350d",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d1ae811d912b7270",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 3",
+        "func": "msg.payload = {\n    response: {\n        text: \"Февраль 1\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 520,
+        "wires": [
+            [
+                "68fee4ac7257c660"
+            ]
+        ]
+    },
+    {
+        "id": "52472654c31442be",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 4",
+        "func": "msg.payload = {\n    response: {\n        text: \"Февраль 0\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 560,
+        "wires": [
+            [
+                "e6b041b0ff54350d"
+            ]
+        ]
+    },
+    {
+        "id": "2c9402e473175e3e",
+        "type": "mqtt out",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "topic": "Март",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2704805b330dec3",
+        "x": 1410,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ccbfbe0451eeb79e",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "315bb2e6717f9320",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "21b4edfbda2e8e10",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 5",
+        "func": "msg.payload = {\n    response: {\n        text: \"Март 1\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 680,
+        "wires": [
+            [
+                "ccbfbe0451eeb79e"
+            ]
+        ]
+    },
+    {
+        "id": "f3f6caa0affca9a1",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 6",
+        "func": "msg.payload = {\n    response: {\n        text: \"Март 0\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 720,
+        "wires": [
+            [
+                "315bb2e6717f9320"
+            ]
+        ]
+    },
+    {
+        "id": "2e2058c4dd8b2ce7",
+        "type": "switch",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "property": "payload.request.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Март 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Март 0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1110,
+        "y": 620,
+        "wires": [
+            [
+                "e282eed84559a9f7",
+                "21b4edfbda2e8e10"
+            ],
+            [
+                "f3f6caa0affca9a1",
+                "89e3eef5a57136e1"
+            ]
+        ]
+    },
+    {
+        "id": "e282eed84559a9f7",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 600,
+        "wires": [
+            [
+                "2c9402e473175e3e"
+            ]
+        ]
+    },
+    {
+        "id": "89e3eef5a57136e1",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 640,
+        "wires": [
+            [
+                "2c9402e473175e3e"
+            ]
+        ]
+    },
+    {
+        "id": "cafdac3529c13ce8",
+        "type": "mqtt out",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "topic": "Апрель",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2704805b330dec3",
+        "x": 1420,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "8b573c09b1cf59df",
+        "type": "switch",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "property": "payload.request.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Апрель 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Апрель 0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1110,
+        "y": 780,
+        "wires": [
+            [
+                "1a45689e1c3d2951",
+                "ea84ef68aed22eb6"
+            ],
+            [
+                "f7ad45605731be0d",
+                "e6018cba2e36de5f"
+            ]
+        ]
+    },
+    {
+        "id": "1a45689e1c3d2951",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 760,
+        "wires": [
+            [
+                "cafdac3529c13ce8"
+            ]
+        ]
+    },
+    {
+        "id": "f7ad45605731be0d",
+        "type": "change",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 800,
+        "wires": [
+            [
+                "cafdac3529c13ce8"
+            ]
+        ]
+    },
+    {
+        "id": "05dbc70baae8f7b1",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "b8f451fcf249f2b8",
+        "type": "http response",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "ea84ef68aed22eb6",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 7",
+        "func": "msg.payload = {\n    response: {\n        text: \"У тебя спина белая!\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 840,
+        "wires": [
+            [
+                "05dbc70baae8f7b1"
+            ]
+        ]
+    },
+    {
+        "id": "e6018cba2e36de5f",
+        "type": "function",
+        "z": "e9bc6a70c1d42687",
+        "name": "function 8",
+        "func": "msg.payload = {\n    response: {\n        text: \"Уже не белая!\",\n        end_session: true\n    },\n    version: \"1.0\"\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 880,
+        "wires": [
+            [
+                "b8f451fcf249f2b8"
+            ]
+        ]
+    }
+]
