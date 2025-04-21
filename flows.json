@@ -808,5 +808,237 @@
         "x": 470,
         "y": 800,
         "wires": []
+    },
+    {
+        "id": "3bc038dd64eedb4d",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Январь",
+        "payload": "true",
+        "payloadType": "str",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "d1334af4b7ba1deb"
+            ]
+        ]
+    },
+    {
+        "id": "0b1795e35600cef9",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Январь",
+        "payload": "false",
+        "payloadType": "str",
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "d1334af4b7ba1deb"
+            ]
+        ]
+    },
+    {
+        "id": "80b809130d6e6ec8",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Февраль",
+        "payload": "true",
+        "payloadType": "str",
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "7fd3737399f03a56"
+            ]
+        ]
+    },
+    {
+        "id": "87dc17e1b00bf83f",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Февраль",
+        "payload": "false",
+        "payloadType": "str",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "7fd3737399f03a56"
+            ]
+        ]
+    },
+    {
+        "id": "5b35ee77c00e5e0f",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Март",
+        "payload": "true",
+        "payloadType": "str",
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "2c9402e473175e3e"
+            ]
+        ]
+    },
+    {
+        "id": "d24677ac61cd6f07",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Март",
+        "payload": "false",
+        "payloadType": "str",
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "2c9402e473175e3e"
+            ]
+        ]
+    },
+    {
+        "id": "083015703786e34a",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Апрель",
+        "payload": "true",
+        "payloadType": "str",
+        "x": 290,
+        "y": 680,
+        "wires": [
+            [
+                "cafdac3529c13ce8"
+            ]
+        ]
+    },
+    {
+        "id": "0ec9bb2aeae6f976",
+        "type": "inject",
+        "z": "e9bc6a70c1d42687",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Апрель",
+        "payload": "false",
+        "payloadType": "str",
+        "x": 290,
+        "y": 640,
+        "wires": [
+            [
+                "cafdac3529c13ce8"
+            ]
+        ]
     }
 ]
